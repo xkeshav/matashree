@@ -1,0 +1,591 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const products = {
+  refrigerators: [
+    {
+      id: 1,
+      name: 'LG 190L 4-Star Direct Cool Refrigerator',
+      price: '₹15,999',
+      image: '/images/lg-fridge.jpg',
+      features: ['4-Star Energy Rating', 'Smart Inverter Compressor', 'Multi Air Flow'],
+      brand: 'LG',
+    },
+    {
+      id: 2,
+      name: 'Samsung 253L 3-Star Frost Free Refrigerator',
+      price: '₹24,999',
+      image: '/images/samsung-fridge.jpg',
+      features: ['Frost Free', 'Digital Inverter', 'Stabilizer Free'],
+      brand: 'Samsung',
+    },
+    {
+      id: 3,
+      name: 'Whirlpool 340L 3-Star Refrigerator',
+      price: '₹32,999',
+      image: '/images/whirlpool-fridge.jpg',
+      features: ['6th Sense Technology', 'Adaptive Intelligence', 'Fresh Flow Air Tower'],
+      brand: 'Whirlpool',
+    },
+  ],
+  washingMachines: [
+    { id: 4, name: 'IFB 6kg Fully Automatic Front Loading', price: '₹28,999', image: '/images/ifb-washing.jpg', features: ['Aqua Energie Technology', 'Cradle Wash', 'Steam Care'], brand: 'IFB' },
+    { id: 5, name: 'Bosch 7kg Fully Automatic', price: '₹35,999', image: '/images/bosch-washing.jpg', features: ['ActiveWater Plus', 'VarioDrum', 'Anti-Vibration Design'], brand: 'Bosch' },
+    { id: 6, name: 'LG 8kg Semi-Automatic', price: '₹18,999', image: '/images/lg-washing.jpg', features: ['Smart Inverter Motor', '6 Motion Technology', 'TurboWash'], brand: 'LG' },
+  ],
+  airConditioners: [
+    { id: 7, name: 'Daikin 1.5T 5-Star Inverter Split AC', price: '₹42,999', image: '/images/daikin-ac.jpg', features: ['5-Star Energy Rating', 'R32 Refrigerant', 'Coanda Airflow'], brand: 'Daikin' },
+    { id: 8, name: 'Voltas 1T 3-Star Window AC', price: '₹28,999', image: '/images/voltas-ac.jpg', features: ['Copper Condenser', 'Anti-Dust Filter', 'Turbo Cool'], brand: 'Voltas' },
+    {
+      id: 9,
+      name: 'Blue Star 2T Inverter Split AC',
+      price: '₹55,999',
+      image: '/images/bluestar-ac.jpg',
+      features: ['Inverter Technology', 'Precision Cooling', 'Multi-Stage Filtration'],
+      brand: 'Blue Star',
+    },
+  ],
+  kitchen: [
+    { id: 10, name: 'Bajaj 25L OTG Microwave', price: '₹8,999', image: '/images/bajaj-otg.jpg', features: ['25L Capacity', 'Convection Cooking', 'Auto Cook Menus'], brand: 'Bajaj' },
+    {
+      id: 11,
+      name: 'Prestige 2L Induction Cooktop',
+      price: '₹3,999',
+      image: '/images/prestige-induction.jpg',
+      features: ['Touch Panel', 'Timer Function', 'Overheating Protection'],
+      brand: 'Prestige',
+    },
+    { id: 12, name: 'Philips Air Fryer 4.1L', price: '₹12,999', image: '/images/philips-fryer.jpg', features: ['Rapid Air Technology', 'Digital Touch Screen', 'Fat Removal'], brand: 'Philips' },
+  ],
+};
+---
+
+<Layout title="Products - MathaShri" description="Explore our wide range of premium home appliances including refrigerators, washing machines, air conditioners, and kitchen appliances">
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-content fade-in">
+          <h1>Our Product Range</h1>
+          <p>Discover premium home appliances from trusted brands with exceptional quality and performance</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+      <div class="container">
+        <div class="filter-controls fade-in">
+          <button class="filter-btn active" data-category="all">All Products</button>
+          <button class="filter-btn" data-category="refrigerators">Refrigerators</button>
+          <button class="filter-btn" data-category="washing-machines">Washing Machines</button>
+          <button class="filter-btn" data-category="air-conditioners">Air Conditioners</button>
+          <button class="filter-btn" data-category="kitchen">Kitchen Appliances</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Refrigerators Section -->
+    <section class="products-section" id="refrigerators">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2>Refrigerators</h2>
+          <p>Energy-efficient cooling solutions for every home size</p>
+        </div>
+
+        <div class="products-grid">
+          {
+            products.refrigerators.map((product, index) => (
+              <div class="product-card slide-in-left" style={`animation-delay: ${index * 0.1}s`}>
+                <div class="product-image">
+                  <img src={product.image} alt={product.name} loading="lazy" />
+                  <div class="product-overlay">
+                    <button class="btn">Quick View</button>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <div class="product-brand">{product.brand}</div>
+                  <h3 class="product-name">{product.name}</h3>
+                  <div class="product-features">
+                    {product.features.map((feature) => (
+                      <span class="feature-tag">{feature}</span>
+                    ))}
+                  </div>
+                  <div class="product-bottom">
+                    <div class="product-price">{product.price}</div>
+                    <button class="btn btn-secondary">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Washing Machines Section -->
+    <section class="products-section" id="washing-machines">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2>Washing Machines</h2>
+          <p>Advanced washing technology for pristine clean clothes</p>
+        </div>
+
+        <div class="products-grid">
+          {
+            products.washingMachines.map((product, index) => (
+              <div class="product-card fade-in" style={`animation-delay: ${index * 0.1}s`}>
+                <div class="product-image">
+                  <img src={product.image} alt={product.name} loading="lazy" />
+                  <div class="product-overlay">
+                    <button class="btn">Quick View</button>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <div class="product-brand">{product.brand}</div>
+                  <h3 class="product-name">{product.name}</h3>
+                  <div class="product-features">
+                    {product.features.map((feature) => (
+                      <span class="feature-tag">{feature}</span>
+                    ))}
+                  </div>
+                  <div class="product-bottom">
+                    <div class="product-price">{product.price}</div>
+                    <button class="btn btn-secondary">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Air Conditioners Section -->
+    <section class="products-section" id="air-conditioners">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2>Air Conditioners</h2>
+          <p>Efficient cooling systems for year-round comfort</p>
+        </div>
+
+        <div class="products-grid">
+          {
+            products.airConditioners.map((product, index) => (
+              <div class="product-card slide-in-right" style={`animation-delay: ${index * 0.1}s`}>
+                <div class="product-image">
+                  <img src={product.image} alt={product.name} loading="lazy" />
+                  <div class="product-overlay">
+                    <button class="btn">Quick View</button>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <div class="product-brand">{product.brand}</div>
+                  <h3 class="product-name">{product.name}</h3>
+                  <div class="product-features">
+                    {product.features.map((feature) => (
+                      <span class="feature-tag">{feature}</span>
+                    ))}
+                  </div>
+                  <div class="product-bottom">
+                    <div class="product-price">{product.price}</div>
+                    <button class="btn btn-secondary">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Kitchen Appliances Section -->
+    <section class="products-section" id="kitchen">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2>Kitchen Appliances</h2>
+          <p>Smart kitchen solutions for modern cooking needs</p>
+        </div>
+
+        <div class="products-grid">
+          {
+            products.kitchen.map((product, index) => (
+              <div class="product-card fade-in" style={`animation-delay: ${index * 0.1}s`}>
+                <div class="product-image">
+                  <img src={product.image} alt={product.name} loading="lazy" />
+                  <div class="product-overlay">
+                    <button class="btn">Quick View</button>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <div class="product-brand">{product.brand}</div>
+                  <h3 class="product-name">{product.name}</h3>
+                  <div class="product-features">
+                    {product.features.map((feature) => (
+                      <span class="feature-tag">{feature}</span>
+                    ))}
+                  </div>
+                  <div class="product-bottom">
+                    <div class="product-price">{product.price}</div>
+                    <button class="btn btn-secondary">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2>Our Services</h2>
+          <p>Complete support for all your appliance needs</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card slide-in-left">
+            <div class="service-icon">
+              <i class="fas fa-truck"></i>
+            </div>
+            <h3>Free Delivery</h3>
+            <p>Free delivery and installation for orders above ₹15,000 within Bengaluru</p>
+          </div>
+
+          <div class="service-card fade-in">
+            <div class="service-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3>Expert Installation</h3>
+            <p>Professional installation by certified technicians with 1-year service warranty</p>
+          </div>
+
+          <div class="service-card fade-in">
+            <div class="service-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Extended Warranty</h3>
+            <p>Optional extended warranty plans for complete peace of mind</p>
+          </div>
+
+          <div class="service-card slide-in-right">
+            <div class="service-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>24/7 Support</h3>
+            <p>Round-the-clock customer support and maintenance services</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 120px 0 80px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .filter-section {
+    padding: 2rem 0;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 70px;
+    z-index: 100;
+  }
+
+  .filter-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: 2px solid var(--border-color);
+    border-radius: 0.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+  }
+
+  .products-section {
+    padding: 4rem 0;
+  }
+
+  .products-section:nth-child(even) {
+    background: var(--light-gray);
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .product-card {
+    background: var(--white);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .product-image {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .product-card:hover .product-image img {
+    transform: scale(1.05);
+  }
+
+  .product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .product-card:hover .product-overlay {
+    opacity: 1;
+  }
+
+  .product-info {
+    padding: 1.5rem;
+  }
+
+  .product-brand {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+  }
+
+  .product-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+
+  .product-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-tag {
+    background: var(--light-gray);
+    color: var(--text-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .product-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .product-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+
+  .services {
+    padding: 5rem 0;
+    background: var(--light-gray);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .service-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .service-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--white);
+    font-size: 1.5rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+  }
+
+  .service-card p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+
+    .filter-controls {
+      padding: 0 1rem;
+    }
+
+    .filter-btn {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .product-bottom {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1rem;
+    }
+  }
+</style>
+
+<script>
+  // Filter functionality
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const productSections = document.querySelectorAll('.products-section');
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      // Remove active class from all buttons
+      filterBtns.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const category = btn.dataset.category;
+
+      if (category === 'all') {
+        productSections.forEach((section) => {
+          section.style.display = 'block';
+        });
+      } else {
+        productSections.forEach((section) => {
+          if (section.id === category) {
+            section.style.display = 'block';
+          } else {
+            section.style.display = 'none';
+          }
+        });
+      }
+    });
+  });
+
+  // Add to cart functionality (demo)
+  document.querySelectorAll('.btn-secondary').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      if (btn.textContent === 'Add to Cart') {
+        btn.textContent = 'Added!';
+        btn.style.background = 'var(--secondary-color)';
+        btn.style.borderColor = 'var(--secondary-color)';
+        btn.style.color = 'var(--white)';
+
+        setTimeout(() => {
+          btn.textContent = 'Add to Cart';
+          btn.style.background = 'transparent';
+          btn.style.borderColor = 'var(--primary-color)';
+          btn.style.color = 'var(--primary-color)';
+        }, 2000);
+      }
+    });
+  });
+
+  // Quick view functionality (demo)
+  document.querySelectorAll('.product-overlay .btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      alert('Quick view feature coming soon!');
+    });
+  });
+</script>

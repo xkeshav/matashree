@@ -1,0 +1,691 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MapComponent from '../components/MapComponent.tsx';
+---
+
+<Layout title="Contact Us - MathaShri" description="Get in touch with MathaShri for all your home appliance needs. Visit our store, call us, or send us a message">
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-content fade-in">
+          <h1>Get in Touch</h1>
+          <p>We're here to help you find the perfect appliances for your home</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="contact-info">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-card slide-in-left">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Visit Our Store</h3>
+            <p>MG Road, Bengaluru<br />Karnataka 560001, India</p>
+            <div class="contact-details">
+              <p><strong>Store Hours:</strong></p>
+              <p>Monday - Saturday: 9:00 AM - 8:00 PM</p>
+              <p>Sunday: 10:00 AM - 6:00 PM</p>
+            </div>
+          </div>
+
+          <div class="contact-card fade-in">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <h3>Call Us</h3>
+            <div class="phone-numbers">
+              <a href="tel:+918023456789">+91 80 2345 6789</a>
+              <a href="tel:+919876543210">+91 98765 43210</a>
+            </div>
+            <div class="contact-details">
+              <p><strong>Call Timing:</strong></p>
+              <p>24/7 Customer Support</p>
+              <p>Sales: 9:00 AM - 8:00 PM</p>
+            </div>
+          </div>
+
+          <div class="contact-card slide-in-right">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Email Us</h3>
+            <div class="email-addresses">
+              <a href="mailto:info@MathaShri.com">info@MathaShri.com</a>
+              <a href="mailto:sales@MathaShri.com">sales@MathaShri.com</a>
+              <a href="mailto:support@MathaShri.com">support@MathaShri.com</a>
+            </div>
+            <div class="contact-details">
+              <p><strong>Response Time:</strong></p>
+              <p>Within 24 hours</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form & Map -->
+    <section class="contact-form-section">
+      <div class="container">
+        <div class="contact-content">
+          <!-- Contact Form -->
+          <div class="form-container slide-in-left">
+            <div class="form-header">
+              <h2>Send us a Message</h2>
+              <p>Have a question or need assistance? We'd love to hear from you!</p>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name *</label>
+                  <input type="text" id="firstName" name="firstName" required />
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name *</label>
+                  <input type="text" id="lastName" name="lastName" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject *</label>
+                <select id="subject" name="subject" required>
+                  <option value="">Select a subject</option>
+                  <option value="product-inquiry">Product Inquiry</option>
+                  <option value="service-support">Service & Support</option>
+                  <option value="warranty">Warranty Claim</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Tell us how we can help you..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="newsletter" />
+                  <span class="checkbox-custom"></span>
+                  Subscribe to our newsletter for offers and updates
+                </label>
+              </div>
+
+              <button type="submit" class="btn submit-btn">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-loading">Sending...</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Map -->
+          <div class="map-container slide-in-right">
+            <MapComponent client:load />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2>Frequently Asked Questions</h2>
+          <p>Quick answers to common questions</p>
+        </div>
+
+        <div class="faq-container">
+          <div class="faq-item fade-in">
+            <button class="faq-question">
+              <span>Do you provide installation services?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, we provide free professional installation for all major appliances. Our certified technicians ensure proper setup and provide a 1-year service warranty on installation.</p>
+            </div>
+          </div>
+
+          <div class="faq-item fade-in">
+            <button class="faq-question">
+              <span>What is your warranty policy?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>All appliances come with manufacturer warranty. We also offer extended warranty plans for additional coverage. Warranty terms vary by product and brand.</p>
+            </div>
+          </div>
+
+          <div class="faq-item fade-in">
+            <button class="faq-question">
+              <span>Do you offer EMI options?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, we offer flexible EMI options through major banks and financial institutions. Zero-interest EMI is available on select products and credit cards.</p>
+            </div>
+          </div>
+
+          <div class="faq-item fade-in">
+            <button class="faq-question">
+              <span>What is your return policy?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>We offer a 7-day return policy for unused products in original packaging. For manufacturing defects, we provide immediate replacement or repair under warranty.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2>Customer Feedback</h2>
+          <p>What our customers say about our service</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card slide-in-left">
+            <div class="testimonial-content">
+              <div class="stars">★★★★★</div>
+              <p>"Outstanding service! The team helped me choose the perfect refrigerator and installed it professionally. Highly recommend MathaShri!"</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="/images/customer4.jpg" alt="Amit Singh" loading="lazy" />
+              <div>
+                <h4>Amit Singh</h4>
+                <span>Verified Purchase</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-content">
+              <div class="stars">★★★★★</div>
+              <p>"Great experience from start to finish. Competitive prices, prompt delivery, and excellent after-sales support. Will definitely shop here again."</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="/images/customer5.jpg" alt="Deepika Rao" loading="lazy" />
+              <div>
+                <h4>Deepika Rao</h4>
+                <span>Verified Purchase</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card slide-in-right">
+            <div class="testimonial-content">
+              <div class="stars">★★★★★</div>
+              <p>"The staff is knowledgeable and patient. They explained all features and helped me make an informed decision. Excellent customer service!"</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="/images/customer6.jpg" alt="Suresh Kumar" loading="lazy" />
+              <div>
+                <h4>Suresh Kumar</h4>
+                <span>Verified Purchase</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 120px 0 80px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .contact-info {
+    padding: 5rem 0;
+    background: var(--light-gray);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .contact-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+  }
+
+  .contact-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .contact-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--white);
+    font-size: 2rem;
+  }
+
+  .contact-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+  }
+
+  .phone-numbers,
+  .email-addresses {
+    margin-bottom: 1.5rem;
+  }
+
+  .phone-numbers a,
+  .email-addresses a {
+    display: block;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+
+  .phone-numbers a:hover,
+  .email-addresses a:hover {
+    color: var(--secondary-color);
+  }
+
+  .contact-details {
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  .contact-details strong {
+    color: var(--accent-color);
+  }
+
+  .contact-form-section {
+    padding: 5rem 0;
+  }
+
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .form-header {
+    margin-bottom: 2rem;
+  }
+
+  .form-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .form-header p {
+    color: #666;
+    font-size: 1.1rem;
+  }
+
+  .contact-form {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    display: block;
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .checkbox-label input[type='checkbox'] {
+    display: none;
+  }
+
+  .checkbox-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 0.25rem;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .checkbox-label input[type='checkbox']:checked + .checkbox-custom {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+
+  .checkbox-label input[type='checkbox']:checked + .checkbox-custom::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .submit-btn {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-loading {
+    display: none;
+  }
+
+  .submit-btn.loading .btn-text {
+    display: none;
+  }
+
+  .submit-btn.loading .btn-loading {
+    display: inline;
+  }
+
+  .faq-section {
+    padding: 5rem 0;
+    background: var(--light-gray);
+  }
+
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background: var(--white);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.5rem 2rem;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--accent-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+
+  .faq-question:hover {
+    background: var(--light-gray);
+  }
+
+  .faq-question i {
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item.active .faq-question i {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 200px;
+  }
+
+  .faq-answer p {
+    padding: 0 2rem 1.5rem;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .testimonials-section {
+    padding: 5rem 0;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .testimonial-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+  }
+
+  .testimonial-content {
+    margin-bottom: 1.5rem;
+  }
+
+  .stars {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-content p {
+    color: #666;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .testimonial-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .testimonial-author h4 {
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 0.25rem;
+  }
+
+  .testimonial-author span {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+
+    .contact-content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+
+    .contact-grid,
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  // Contact form handling
+  document.getElementById('contactForm')?.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const submitBtn = this.querySelector('.submit-btn')!;
+    submitBtn.classList.add('loading');
+
+    // Simulate form submission
+    setTimeout(() => {
+      submitBtn.classList.remove('loading');
+      alert('Thank you for your message! We will get back to you within 24 hours.');
+      // this.reset();
+    }, 2000);
+  });
+
+  // FAQ functionality
+  document.querySelectorAll('.faq-question').forEach((question) => {
+    question.addEventListener('click', () => {
+      const faqItem = question.parentElement!;
+      const isActive = faqItem.classList.contains('active');
+
+      // Close all FAQ items
+      document.querySelectorAll('.faq-item').forEach((item) => {
+        item.classList.remove('active');
+      });
+
+      // Open clicked item if it wasn't active
+      if (!isActive) {
+        faqItem.classList.add('active');
+      }
+    });
+  });
+
+  // Form validation
+  const form = document.getElementById('contactForm');
+  const inputs = form?.querySelectorAll('input[required], select[required], textarea[required]');
+
+  inputs?.forEach((input) => {
+    input.addEventListener('blur', function () {
+      if (!this.value.trim()) {
+        this.style.borderColor = '#ff4757';
+      } else {
+        this.style.borderColor = '#2ed573';
+      }
+    });
+
+    input.addEventListener('input', function () {
+      if (this.value.trim()) {
+        this.style.borderColor = '#2ed573';
+      }
+    });
+  });
+</script>
