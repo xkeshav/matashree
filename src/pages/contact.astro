@@ -3,9 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MapComponent from '../components/MapComponent.tsx';
+import { SHOP_ADDRESS } from '../constants';
 ---
 
-<Layout title="Contact Us - MathaShri" description="Get in touch with MathaShri for all your home appliance needs. Visit our store, call us, or send us a message">
+<Layout title="Contact Us - MataShree" description="Get in touch with MataShree for all your home appliance needs. Visit our store, call us, or send us a message">
   <Header />
 
   <main>
@@ -28,11 +29,11 @@ import MapComponent from '../components/MapComponent.tsx';
               <i class="fas fa-map-marker-alt"></i>
             </div>
             <h3>Visit Our Store</h3>
-            <p>MG Road, Bengaluru<br />Karnataka 560001, India</p>
+            <p>{SHOP_ADDRESS}<br /></p>
             <div class="contact-details">
               <p><strong>Store Hours:</strong></p>
-              <p>Monday - Saturday: 9:00 AM - 8:00 PM</p>
-              <p>Sunday: 10:00 AM - 6:00 PM</p>
+              <p>Monday - Saturday: 8:00 AM - 10:00 PM</p>
+              <p>Sunday: 8:00 AM - 10:00 PM</p>
             </div>
           </div>
 
@@ -42,13 +43,13 @@ import MapComponent from '../components/MapComponent.tsx';
             </div>
             <h3>Call Us</h3>
             <div class="phone-numbers">
-              <a href="tel:+918023456789">+91 80 2345 6789</a>
-              <a href="tel:+919876543210">+91 98765 43210</a>
+              <a href="tel:+919481168953">+91 94811 68953</a>
+              <a href="tel:+919380625433">+91 93806 25433</a>
             </div>
             <div class="contact-details">
               <p><strong>Call Timing:</strong></p>
               <p>24/7 Customer Support</p>
-              <p>Sales: 9:00 AM - 8:00 PM</p>
+              <p>Sales: 8:00 AM - 10:00 PM</p>
             </div>
           </div>
 
@@ -58,9 +59,9 @@ import MapComponent from '../components/MapComponent.tsx';
             </div>
             <h3>Email Us</h3>
             <div class="email-addresses">
-              <a href="mailto:info@MathaShri.com">info@MathaShri.com</a>
-              <a href="mailto:sales@MathaShri.com">sales@MathaShri.com</a>
-              <a href="mailto:support@MathaShri.com">support@MathaShri.com</a>
+              <a href="mailto:info@MataShree.com">info@MataShree.com</a>
+              <a href="mailto:sales@MataShree.com">sales@MataShree.com</a>
+              <a href="mailto:support@MataShree.com">support@MataShree.com</a>
             </div>
             <div class="contact-details">
               <p><strong>Response Time:</strong></p>
@@ -139,7 +140,7 @@ import MapComponent from '../components/MapComponent.tsx';
 
           <!-- Map -->
           <div class="map-container slide-in-right">
-            <MapComponent client:load />
+            <MapComponent address={SHOP_ADDRESS} client:load />
           </div>
         </div>
       </div>
@@ -209,10 +210,9 @@ import MapComponent from '../components/MapComponent.tsx';
           <div class="testimonial-card slide-in-left">
             <div class="testimonial-content">
               <div class="stars">★★★★★</div>
-              <p>"Outstanding service! The team helped me choose the perfect refrigerator and installed it professionally. Highly recommend MathaShri!"</p>
+              <p>"Outstanding service! The team helped me choose the perfect refrigerator and installed it professionally. Highly recommend MataShree!"</p>
             </div>
             <div class="testimonial-author">
-              <img src="/images/customer4.jpg" alt="Amit Singh" loading="lazy" />
               <div>
                 <h4>Amit Singh</h4>
                 <span>Verified Purchase</span>
@@ -226,7 +226,6 @@ import MapComponent from '../components/MapComponent.tsx';
               <p>"Great experience from start to finish. Competitive prices, prompt delivery, and excellent after-sales support. Will definitely shop here again."</p>
             </div>
             <div class="testimonial-author">
-              <img src="/images/customer5.jpg" alt="Deepika Rao" loading="lazy" />
               <div>
                 <h4>Deepika Rao</h4>
                 <span>Verified Purchase</span>

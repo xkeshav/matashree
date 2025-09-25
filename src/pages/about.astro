@@ -2,9 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Avatar from '../components/Avatar.astro';
 ---
 
-<Layout title="About Us - MathaShri" description="Learn about our journey, mission, and commitment to bringing premium home appliances to Indian households">
+<Layout title="About Us - MataShree" description="Learn about our journey, mission, and commitment to bringing premium home appliances to Indian households">
   <Header />
 
   <main>
@@ -12,7 +13,7 @@ import Footer from '../components/Footer.astro';
     <section class="page-hero">
       <div class="container">
         <div class="hero-content fade-in">
-          <h1>About MathaShri</h1>
+          <h1>About MataShree</h1>
           <p>Transforming Indian homes with premium appliances and exceptional service since 2015</p>
         </div>
       </div>
@@ -25,7 +26,7 @@ import Footer from '../components/Footer.astro';
           <div class="story-text slide-in-left">
             <h2>Our Story</h2>
             <p>
-              Founded in 2015 with a simple vision: to make premium home appliances accessible to every Indian household. What started as a small family business in Bengaluru has grown into a trusted
+              Founded in 2011 with a simple vision: to make premium home appliances accessible to every Indian household. What started as a small family business in Bengaluru has grown into a trusted
               name across Karnataka and beyond.
             </p>
 
@@ -51,7 +52,7 @@ import Footer from '../components/Footer.astro';
           </div>
 
           <div class="story-image slide-in-right">
-            <img src="/images/about-story.jpg" alt="MathaShri Store" loading="lazy" />
+            <img src="/images/about-story.jpg" alt="MataShree Store" loading="lazy" />
             <div class="image-decoration"></div>
           </div>
         </div>
@@ -130,38 +131,38 @@ import Footer from '../components/Footer.astro';
       <div class="container">
         <div class="section-header fade-in">
           <h2>Meet Our Team</h2>
-          <p>The passionate people behind MathaShri</p>
+          <p>The passionate people behind MataShree</p>
         </div>
 
         <div class="team-grid">
           <div class="team-member slide-in-left">
             <div class="member-image">
-              <img src="/images/team-founder.jpg" alt="Rajesh Gupta" loading="lazy" />
+              <Avatar name="Paratpa Ram" size={200} className="team-avatar" />
             </div>
             <div class="member-info">
-              <h4>Rajesh Gupta</h4>
+              <h4>Pratapa Ram Patel</h4>
               <p class="member-role">Founder & CEO</p>
-              <p class="member-bio">With 15+ years in the appliance industry, Rajesh founded MathaShri to make quality appliances accessible to every Indian family.</p>
+              <p class="member-bio">With 15+ years in the appliance industry, Pratapa Ram founded MataShree to make quality appliances accessible to every Indian family.</p>
             </div>
           </div>
 
           <div class="team-member fade-in">
             <div class="member-image">
-              <img src="/images/team-manager.jpg" alt="Priya Sharma" loading="lazy" />
+              <Avatar name="Takhat Singh" size={200} className="team-avatar" />
             </div>
             <div class="member-info">
-              <h4>Priya Sharma</h4>
+              <h4>Takhat Singh</h4>
               <p class="member-role">Operations Manager</p>
-              <p class="member-bio">Priya ensures smooth operations and excellent customer service, bringing 10+ years of retail management experience.</p>
+              <p class="member-bio">Takhat Singh ensures smooth operations and excellent customer service, bringing 10+ years of retail management experience.</p>
             </div>
           </div>
 
           <div class="team-member slide-in-right">
             <div class="member-image">
-              <img src="/images/team-technical.jpg" alt="Arjun Patel" loading="lazy" />
+              <Avatar name="Arjun" size={200} className="team-avatar" />
             </div>
             <div class="member-info">
-              <h4>Arjun Patel</h4>
+              <h4>Arjun</h4>
               <p class="member-role">Technical Head</p>
               <p class="member-bio">Arjun leads our installation and service team, ensuring every appliance is set up perfectly and maintained properly.</p>
             </div>
@@ -393,10 +394,11 @@ import Footer from '../components/Footer.astro';
     transform: translateY(-5px);
   }
 
-  .member-image img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
+  .member-image {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    background: var(--light-gray);
   }
 
   .member-info {
