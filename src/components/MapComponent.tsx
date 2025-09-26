@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
+import { COORDINATES } from '../constants';
+
+// frontmatter
+export const SHOP_NAME = 'Matha Sree Home Appliance';
+export const SHOP_LAT = 12.9341298;
+export const SHOP_LNG = 77.7013653;
+const zoom = 17;
+
+const mapsUrl = `https://www.google.com/maps/place/${encodeURIComponent(SHOP_NAME)}/@${SHOP_LAT},${SHOP_LNG},${zoom}z`;
+const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${SHOP_LAT},${SHOP_LNG}`;
 
 interface MapComponentProps {
   address?: string;
   className?: string;
 }
 
-const MapComponent: React.FC<MapComponentProps> = ({ address = 'Panathur, Karnataka 560001, India', className = '' }) => {
+const MapComponent: React.FC<MapComponentProps> = ({ address = 'Karnataka Bengaluru, India', className = '' }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   // Encode address for Google Maps embed
@@ -44,7 +54,7 @@ const MapComponent: React.FC<MapComponentProps> = ({ address = 'Panathur, Karnat
       </div>
 
       <div className="map-actions">
-        <a href={`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+        <a href={directionsUrl} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
           <i className="fas fa-directions"></i>
           Get Directions
         </a>

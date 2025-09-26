@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MapComponent from '../components/MapComponent.tsx';
-import { CONTACT_EMAIL, SHOP_ADDRESS } from '../constants';
+import { CONTACT_EMAIL, SHOP_LOCATION } from '../constants';
 ---
 
 <Layout title="Contact Us - MataShree" description="Get in touch with MataShree for all your home appliance needs. Visit our store, call us, or send us a message">
@@ -29,7 +29,7 @@ import { CONTACT_EMAIL, SHOP_ADDRESS } from '../constants';
               <i class="fas fa-map-marker-alt"></i>
             </div>
             <h3>Visit Our Store</h3>
-            <p>{SHOP_ADDRESS}<br /></p>
+            <p>{SHOP_LOCATION}<br /></p>
             <div class="contact-details">
               <p><strong>Store Hours:</strong></p>
               <p>Monday - Saturday: 8:00 AM - 10:00 PM</p>
@@ -138,7 +138,7 @@ import { CONTACT_EMAIL, SHOP_ADDRESS } from '../constants';
 
           <!-- Map -->
           <div class="map-container slide-in-right">
-            <MapComponent address={SHOP_ADDRESS} client:load />
+            <MapComponent address={SHOP_LOCATION} client:load />
           </div>
         </div>
       </div>
@@ -237,7 +237,6 @@ import { CONTACT_EMAIL, SHOP_ADDRESS } from '../constants';
               <p>"The staff is knowledgeable and patient. They explained all features and helped me make an informed decision. Excellent customer service!"</p>
             </div>
             <div class="testimonial-author">
-              <img src="/images/customer6.jpg" alt="Suresh Kumar" loading="lazy" />
               <div>
                 <h4>Suresh Kumar</h4>
                 <span>Verified Purchase</span>
