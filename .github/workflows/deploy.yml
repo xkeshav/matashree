@@ -20,14 +20,14 @@ jobs:
       - name: Install, build, and prepare Astro site
         uses: withastro/action@v3
         with:
-          path: . # root of your Astro project
+          path: .
           node-version: 20
           package-manager: npm
 
-      - name: Upload GitHub Pages artifact
+      - name: Upload GitHub Pages artifact (v4)
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./dist # Astro's default output folder
+          path: ./dist
 
   deploy:
     needs: build
