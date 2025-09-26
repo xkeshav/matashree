@@ -1,2 +1,3 @@
 export const SHOP_ADDRESS = 'Shop No.5, Jayamma Building,Opposite Parimala trinity Apartments,JCR Layout, Bhoganhalli Road, Panathur, Bengaluru, Karnataka - 560103, India';
-export const CONTACT_NUMBER= "94811 68953"
+export const CONTACT_NUMBER= "94811 68953";
+export const CONTACT_EMAIL = "msga94811@gmail.com";

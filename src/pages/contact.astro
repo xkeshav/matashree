@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MapComponent from '../components/MapComponent.tsx';
-import { SHOP_ADDRESS } from '../constants';
+import { CONTACT_EMAIL, SHOP_ADDRESS } from '../constants';
 ---
 
 <Layout title="Contact Us - MataShree" description="Get in touch with MataShree for all your home appliance needs. Visit our store, call us, or send us a message">
@@ -59,9 +59,7 @@ import { SHOP_ADDRESS } from '../constants';
             </div>
             <h3>Email Us</h3>
             <div class="email-addresses">
-              <a href="mailto:info@MataShree.com">info@MataShree.com</a>
-              <a href="mailto:sales@MataShree.com">sales@MataShree.com</a>
-              <a href="mailto:support@MataShree.com">support@MataShree.com</a>
+              <a href=`mailto:i${CONTACT_EMAIL}`>{CONTACT_EMAIL}</a>
             </div>
             <div class="contact-details">
               <p><strong>Response Time:</strong></p>
