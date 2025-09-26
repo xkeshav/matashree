@@ -1,0 +1,84 @@
+@import url('./base.css');
+
+.map-container {
+  background: var(--white);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+.map-header {
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--white);
+  text-align: center;
+}
+
+.map-header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.map-address {
+  opacity: 0.9;
+  font-size: 1rem;
+}
+
+.map-wrapper {
+  position: relative;
+  background: var(--light-gray);
+}
+
+.map-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--light-gray);
+  z-index: 1;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--border-color);
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.map-actions {
+  padding: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .map-header {
+    padding: 1.5rem;
+  }
+
+  .map-actions {
+    padding: 1.5rem;
+    flex-direction: column;
+  }
+}

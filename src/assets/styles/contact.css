@@ -1,0 +1,378 @@
+@import url('./base.css');
+
+.page-hero {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--white);
+  padding: 120px 0 80px;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  padding: 5rem 0;
+  background: var(--light-gray);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.contact-card {
+  background: var(--white);
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: var(--white);
+  font-size: 2rem;
+}
+
+.contact-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.phone-numbers,
+.email-addresses {
+  margin-bottom: 1.5rem;
+}
+
+.phone-numbers a,
+.email-addresses a {
+  display: block;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.phone-numbers a:hover,
+.email-addresses a:hover {
+  color: var(--secondary-color);
+}
+
+.contact-details {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.contact-details strong {
+  color: var(--accent-color);
+}
+
+.contact-form-section {
+  padding: 5rem 0;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.form-header {
+  margin-bottom: 2rem;
+}
+
+.form-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.form-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.contact-form {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  color: var(--accent-color);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.checkbox-label input[type='checkbox'] {
+  display: none;
+}
+
+.checkbox-custom {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-color);
+  border-radius: 0.25rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.checkbox-label input[type='checkbox']:checked+.checkbox-custom {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.checkbox-label input[type='checkbox']:checked+.checkbox-custom::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.submit-btn {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-loading {
+  display: none;
+}
+
+.submit-btn.loading .btn-text {
+  display: none;
+}
+
+.submit-btn.loading .btn-loading {
+  display: inline;
+}
+
+.faq-section {
+  padding: 5rem 0;
+  background: var(--light-gray);
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--white);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.5rem 2rem;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--accent-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  background: var(--light-gray);
+}
+
+.faq-question i {
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+}
+
+.faq-answer p {
+  padding: 0 2rem 1.5rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.testimonials-section {
+  padding: 5rem 0;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.testimonial-content {
+  margin-bottom: 1.5rem;
+}
+
+.stars {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-content p {
+  color: #666;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.testimonial-author img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-author h4 {
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 0.25rem;
+}
+
+.testimonial-author span {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .contact-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    padding: 2rem 1.5rem;
+  }
+}
