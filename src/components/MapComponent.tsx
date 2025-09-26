@@ -59,7 +59,7 @@ const MapComponent: React.FC<MapComponentProps> = ({ address = 'Karnataka Bengal
           <i className="fas fa-directions"></i>
           Get Directions
         </a>
-        <a href="tel:+918023456789" className="btn">
+        <a href="tel:+919481168953" className="btn">
           <i className="fas fa-phone"></i>
           Call Store
         </a>
