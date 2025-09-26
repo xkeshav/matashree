@@ -2,67 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import productJson from '../json/products.json';
 
-const products = {
-  refrigerators: [
-    {
-      id: 1,
-      name: 'LG 190L 4-Star Direct Cool Refrigerator',
-      price: '₹15,999',
-      image: '/images/lg-fridge.jpg',
-      features: ['4-Star Energy Rating', 'Smart Inverter Compressor', 'Multi Air Flow'],
-      brand: 'LG',
-    },
-    {
-      id: 2,
-      name: 'Samsung 253L 3-Star Frost Free Refrigerator',
-      price: '₹24,999',
-      image: '/images/samsung-fridge.jpg',
-      features: ['Frost Free', 'Digital Inverter', 'Stabilizer Free'],
-      brand: 'Samsung',
-    },
-    {
-      id: 3,
-      name: 'Whirlpool 340L 3-Star Refrigerator',
-      price: '₹32,999',
-      image: '/images/whirlpool-fridge.jpg',
-      features: ['6th Sense Technology', 'Adaptive Intelligence', 'Fresh Flow Air Tower'],
-      brand: 'Whirlpool',
-    },
-  ],
-  washingMachines: [
-    { id: 4, name: 'IFB 6kg Fully Automatic Front Loading', price: '₹28,999', image: '/images/ifb-washing.jpg', features: ['Aqua Energie Technology', 'Cradle Wash', 'Steam Care'], brand: 'IFB' },
-    { id: 5, name: 'Bosch 7kg Fully Automatic', price: '₹35,999', image: '/images/bosch-washing.jpg', features: ['ActiveWater Plus', 'VarioDrum', 'Anti-Vibration Design'], brand: 'Bosch' },
-    { id: 6, name: 'LG 8kg Semi-Automatic', price: '₹18,999', image: '/images/lg-washing.jpg', features: ['Smart Inverter Motor', '6 Motion Technology', 'TurboWash'], brand: 'LG' },
-  ],
-  airConditioners: [
-    { id: 7, name: 'Daikin 1.5T 5-Star Inverter Split AC', price: '₹42,999', image: '/images/daikin-ac.jpg', features: ['5-Star Energy Rating', 'R32 Refrigerant', 'Coanda Airflow'], brand: 'Daikin' },
-    { id: 8, name: 'Voltas 1T 3-Star Window AC', price: '₹28,999', image: '/images/voltas-ac.jpg', features: ['Copper Condenser', 'Anti-Dust Filter', 'Turbo Cool'], brand: 'Voltas' },
-    {
-      id: 9,
-      name: 'Blue Star 2T Inverter Split AC',
-      price: '₹55,999',
-      image: '/images/bluestar-ac.jpg',
-      features: ['Inverter Technology', 'Precision Cooling', 'Multi-Stage Filtration'],
-      brand: 'Blue Star',
-    },
-  ],
-  kitchen: [
-    { id: 10, name: 'Bajaj 25L OTG Microwave', price: '₹8,999', image: '/images/bajaj-otg.jpg', features: ['25L Capacity', 'Convection Cooking', 'Auto Cook Menus'], brand: 'Bajaj' },
-    {
-      id: 11,
-      name: 'Prestige 2L Induction Cooktop',
-      price: '₹3,999',
-      image: '/images/prestige-induction.jpg',
-      features: ['Touch Panel', 'Timer Function', 'Overheating Protection'],
-      brand: 'Prestige',
-    },
-    { id: 12, name: 'Philips Air Fryer 4.1L', price: '₹12,999', image: '/images/philips-fryer.jpg', features: ['Rapid Air Technology', 'Digital Touch Screen', 'Fat Removal'], brand: 'Philips' },
-  ],
-};
+const products = productJson;
 ---
 
-<Layout title="Products - MataShree" description="Explore our wide range of premium home appliances including refrigerators, washing machines, air conditioners, and kitchen appliances">
+<Layout title="Products - MataShree" description="Explore our wide range of premium home appliances including Cookers, Tawas, Utensils, and Glasswares">
   <Header />
 
   <main>
@@ -81,25 +26,25 @@ const products = {
       <div class="container">
         <div class="filter-controls fade-in">
           <button class="filter-btn active" data-category="all">All Products</button>
-          <button class="filter-btn" data-category="refrigerators">Refrigerators</button>
-          <button class="filter-btn" data-category="washing-machines">Washing Machines</button>
-          <button class="filter-btn" data-category="air-conditioners">Air Conditioners</button>
-          <button class="filter-btn" data-category="kitchen">Kitchen Appliances</button>
+          <button class="filter-btn" data-category="Cookers">Cookers</button>
+          <button class="filter-btn" data-category="washing-machines">Tawas</button>
+          <button class="filter-btn" data-category="air-conditioners">Utensils</button>
+          <button class="filter-btn" data-category="kitchen">Glasswares</button>
         </div>
       </div>
     </section>
 
-    <!-- Refrigerators Section -->
-    <section class="products-section" id="refrigerators">
+    <!-- Cookers Section -->
+    <section class="products-section" id="Cookers">
       <div class="container">
         <div class="section-header fade-in">
-          <h2>Refrigerators</h2>
+          <h2>Cookers</h2>
           <p>Energy-efficient cooling solutions for every home size</p>
         </div>
 
         <div class="products-grid">
           {
-            products.refrigerators.map((product, index) => (
+            products.cookers.map((product, index) => (
               <div class="product-card slide-in-left" style={`animation-delay: ${index * 0.1}s`}>
                 <div class="product-image">
                   <img src={product.image} alt={product.name} loading="lazy" />
@@ -127,17 +72,17 @@ const products = {
       </div>
     </section>
 
-    <!-- Washing Machines Section -->
+    <!-- Tawas Section -->
     <section class="products-section" id="washing-machines">
       <div class="container">
         <div class="section-header fade-in">
-          <h2>Washing Machines</h2>
+          <h2>Tawas</h2>
           <p>Advanced washing technology for pristine clean clothes</p>
         </div>
 
         <div class="products-grid">
           {
-            products.washingMachines.map((product, index) => (
+            products.tawas.map((product, index) => (
               <div class="product-card fade-in" style={`animation-delay: ${index * 0.1}s`}>
                 <div class="product-image">
                   <img src={product.image} alt={product.name} loading="lazy" />
@@ -165,17 +110,17 @@ const products = {
       </div>
     </section>
 
-    <!-- Air Conditioners Section -->
+    <!-- Utensils Section -->
     <section class="products-section" id="air-conditioners">
       <div class="container">
         <div class="section-header fade-in">
-          <h2>Air Conditioners</h2>
+          <h2>Utensils</h2>
           <p>Efficient cooling systems for year-round comfort</p>
         </div>
 
         <div class="products-grid">
           {
-            products.airConditioners.map((product, index) => (
+            products.utensils.map((product, index) => (
               <div class="product-card slide-in-right" style={`animation-delay: ${index * 0.1}s`}>
                 <div class="product-image">
                   <img src={product.image} alt={product.name} loading="lazy" />
@@ -203,17 +148,17 @@ const products = {
       </div>
     </section>
 
-    <!-- Kitchen Appliances Section -->
+    <!-- Glasswares Section -->
     <section class="products-section" id="kitchen">
       <div class="container">
         <div class="section-header fade-in">
-          <h2>Kitchen Appliances</h2>
+          <h2>Glasswares</h2>
           <p>Smart kitchen solutions for modern cooking needs</p>
         </div>
 
         <div class="products-grid">
           {
-            products.kitchen.map((product, index) => (
+            products.glassware.map((product, index) => (
               <div class="product-card fade-in" style={`animation-delay: ${index * 0.1}s`}>
                 <div class="product-image">
                   <img src={product.image} alt={product.name} loading="lazy" />
@@ -536,8 +481,8 @@ const products = {
 
 <script>
   // Filter functionality
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const productSections = document.querySelectorAll('.products-section');
+  const filterBtns = document.querySelectorAll<HTMLElement>('.filter-btn');
+  const productSections = document.querySelectorAll<HTMLElement>('.products-section');
 
   filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -564,8 +509,8 @@ const products = {
   });
 
   // Add to cart functionality (demo)
-  document.querySelectorAll('.btn-secondary').forEach((btn) => {
-    btn.addEventListener('click', (e) => {
+  document.querySelectorAll<HTMLButtonElement>('.btn-secondary').forEach((btn) => {
+    btn.addEventListener('click', () => {
       if (btn.textContent === 'Add to Cart') {
         btn.textContent = 'Added!';
         btn.style.background = 'var(--secondary-color)';

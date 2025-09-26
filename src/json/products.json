@@ -1,0 +1,106 @@
+{
+  "cookers": [
+    {
+      "id": 1,
+      "name": "Prestige Deluxe Plus Pressure Cooker 5L",
+      "price": "₹2, 499",
+      "image": "/images/prestige-cooker.jpg",
+      "features": ["Stainless Steel", "High Pressure Cooking", "Durable Handle"],
+      "brand": "Prestige"
+    },
+    {
+      "id": 2,
+      "name": "Hawkins Futura Hard Anodized Pressure Cooker 3L",
+      "price": "₹3, 199",
+      "image": "/images/hawkins-cooker.jpg",
+      "features": ["Hard Anodized Body", "Steam Release", "Lightweight"],
+      "brand": "Hawkins"
+    },
+    {
+      "id": 3,
+      "name": "Pigeon by Stovekraft Favourite Cooker 4L",
+      "price": "₹1, 999",
+      "image": "/images/pigeon-cooker.jpg",
+      "features": ["Aluminum Body", "Easy Grip Handles", "Quick Cooking"],
+      "brand": "Pigeon"
+    }
+  ],
+  "tawas": [
+    {
+      "id": 4,
+      "name": "Bajaj Non-Stick Tawa 28cm",
+      "price": "₹899",
+      "image": "/images/bajaj-tawa.jpg",
+      "features": ["Non-Stick Surface", "Even Heat Distribution", "Easy to Clean"],
+      "brand": "Bajaj"
+    },
+    {
+      "id": 5,
+      "name": "Prestige Omega Cast Iron Tawa 30cm",
+      "price": "₹1, 299",
+      "image": "/images/prestige-tawa.jpg",
+      "features": ["Cast Iron", "Durable", "Non-Toxic Cooking"],
+      "brand": "Prestige"
+    },
+    {
+      "id": 6,
+      "name": "Hawkins Hard Anodized Tawa 28cm",
+      "price": "₹1, 099",
+      "image": "/images/hawkins-tawa.jpg",
+      "features": ["Hard Anodized", "Scratch Resistant", "Even Heat"],
+      "brand": "Hawkins"
+    }
+  ],
+  "utensils": [
+    {
+      "id": 7,
+      "name": "Cello Nylon Spoon Set of 3",
+      "price": "₹299",
+      "image": "/images/cello-spoon.jpg",
+      "features": ["Heat Resistant", "Lightweight", "Durable"],
+      "brand": "Cello"
+    },
+    {
+      "id": 8,
+      "name": "Vinod Stainless Steel Ladle",
+      "price": "₹399",
+      "image": "/images/vinod-ladle.jpg",
+      "features": ["Stainless Steel", "Ergonomic Handle", "Rust Free"],
+      "brand": "Vinod"
+    },
+    {
+      "id": 9,
+      "name": "Wonderchef Non-Stick Spatula Set of 2",
+      "price": "₹499",
+      "image": "/images/wonderchef-spatula.jpg",
+      "features": ["Non-Stick Friendly", "Lightweight", "Ergonomic Grip"],
+      "brand": "Wonderchef"
+    }
+  ],
+  "glassware": [
+    {
+      "id": 10,
+      "name": "Borosil Classic Glass Tumbler Set of 6",
+      "price": "₹799",
+      "image": "/images/borosil-tumbler.jpg",
+      "features": ["Heat Resistant", "Durable Glass", "Easy to Clean"],
+      "brand": "Borosil"
+    },
+    {
+      "id": 11,
+      "name": "Cello Premium Juice Glass Set of 6",
+      "price": "₹499",
+      "image": "/images/cello-glass.jpg",
+      "features": ["Thick Glass", "Dishwasher Safe", "Elegant Design"],
+      "brand": "Cello"
+    },
+    {
+      "id": 12,
+      "name": "Luminarc Pure Glass Set of 4",
+      "price": "₹599",
+      "image": "/images/luminarc-glass.jpg",
+      "features": ["Crystal Clear", "Scratch Resistant", "Modern Design"],
+      "brand": "Luminarc"
+    }
+  ]
+}
